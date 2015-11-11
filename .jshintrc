@@ -1,0 +1,24 @@
+{
+  "asi"      : false,
+  "boss"     : true,
+  "browser"  : true,
+  "curly"    : false,
+  "debug"    : true,
+  "devel"    : true,
+  "eqeqeq"   : true,
+  "eqnull"   : true,
+  "expr"     : true,
+  "laxbreak" : true,
+  "laxcomma" : true,
+  "jquery"   : true,
+  "node"     : true,
+  "validthis": true,
+  "strict"   : true,  // require "use strict"
+
+  "indent"   : 2,
+  "quotmark" : "single",
+  
+  // BEHAVIOR
+  "passfail" : false,  // stop on first error.
+  "maxerr"   : 100       // maximum error before stopping.
+}

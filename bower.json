@@ -1,0 +1,13 @@
+{
+  "name": "awards",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "angular-animate": "~1.4.3",
+    "angular-resource": "~1.4",
+    "angular-route": "~1.4",
+    "angular-touch": "~1.4.6",
+    "angularjs": "~1.4.3",
+    "angular-chart.js": "~0.8.5"
+  }
+}
