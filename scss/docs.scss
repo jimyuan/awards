@@ -1,5 +1,9 @@
 @charset 'utf-8';
 
+/* re-define variables */
+$body-bg: #1f253d;
+$body-color: #fff;
+
 @import 'utils/variables';
 @import 'utils/functions';
 @import 'utils/mixins';
