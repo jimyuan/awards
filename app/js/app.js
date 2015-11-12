@@ -16,6 +16,9 @@
         templateUrl: viewPath + '/home.html',
         controller:  'HomeCtrl'
       })
+      .when('/ui', {
+        templateUrl: viewPath + '/ui.html'
+      })
       .otherwise({redirectTo: '/home'});
 
   }]);

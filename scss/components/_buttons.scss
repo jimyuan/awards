@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border: $border-width solid transparent;
+  padding: $spacer / 2 $spacer * 1.5;
+  font-size: $font-size-base;
+  line-height: $line-height;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &.active,
+  &:focus,
+  &.focus {
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+    box-shadow: none;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  @include btn-variant($brand-primary);
+}
+.btn-success {
+  @include btn-variant($brand-success);
+}
+.btn-info {
+  @include btn-variant($brand-info);
+}
+.btn-warning {
+  @include btn-variant($brand-warning);
+}
+.btn-danger {
+  @include btn-variant($brand-danger);
+}

@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+.menu-list {
+  padding: 0;
+  margin: 0 $spacer * -1;
+  list-style-type: none;
+
+  & > li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+
+    & + li {
+      border-top: 1px solid $body-bg;
+    }
+
+    &.active > a,
+    & > a:hover {
+      color: inherit;
+      background-color: lighten($body-bg2, 10%);
+    }
+  }
+
+  a {
+    display: block;
+    padding: $spacer / 2 $spacer;
+
+    span::before {
+      content: attr(data-icon);
+      font-size: 1.5em;
+      padding-right: $spacer / 2;
+    }
+  }
+}

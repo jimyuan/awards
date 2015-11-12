@@ -60,6 +60,8 @@ html {
 html {
   // Sets a specific default `font-size` for user with `rem` type scales.
   font-size: $font-size-root;
+  // Set the content full of the view port
+  height: 100%;
   // Changes the default tap highlight to be completely transparent in iOS.
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -73,6 +75,7 @@ body {
   color: $body-color;
   // By default, `<body>` has no `background-color` so we set one as a best practice.
   background-color: $body-bg;
+  height: 100%;
 }
 
 

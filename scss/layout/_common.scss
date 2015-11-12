@@ -1,12 +1,41 @@
 @charset 'utf-8';
 
-.app-body {
+body {
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
 
 .container {
-  @include absolute(top 0 left 0 right 0);
-  padding: $grid-gutter-width;
-  background: white;
+  @include absolute(top $spacer / 2 left $spacer / 2 right $spacer / 2 );
+
+
+  &.ng-enter {
+    transform: translateY(-100%);
+    transition:0.5s cubic-bezier(.15,.5,1,1) transform;
+  }
+
+  &.ng-enter.ng-enter-active {
+    transform: translateY(0);
+  }
+
+  &.ng-leave {
+    transform: translateY(0);
+    transition:0.5s cubic-bezier(.15,.5,1,1) transform;
+  }
+
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+.row {
+  background-color: $body-bg2;
+  margin-bottom: $spacer / 2;
+  padding: $spacer;
+}
+
+.text-j {
+  text-align: justify;
+  hyphens: auto;
 }
