@@ -1,8 +1,8 @@
 (function(){
   'use strict';
-  angular.module('HomeCtrlModule', []).controller('HomeCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
+  angular.module('HomeCtrlModule', []).controller('HomeCtrl', ['$scope', function($scope){
 
-    $rootScope.title = 'Home Page';
+    $scope.$parent.title = 'Home Page';
     // code here
   }]);
 })();

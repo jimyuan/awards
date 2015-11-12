@@ -1,13 +1,46 @@
 @charset 'utf-8';
 
 body {
-  position: relative;
+  @include fixed(left 0 right 0);
+  transition: transform 0.5s;
   -webkit-overflow-scrolling: touch;
 }
 
-.container {
-  @include absolute(top $spacer / 2 left $spacer / 2 right $spacer / 2 );
+header {
+  @include absolute(left 0 right 0);
 
+  height: 3.5rem;
+  background-color: $body-bg2;
+  border: $spacer / 2 solid $body-bg;
+  z-index: 1000;
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+}
+
+nav {
+  @include absolute(left -60% top 0 bottom 0);
+
+  width: 60%;
+  background-color: lighten($body-bg, 5%);
+  border: $spacer / 2 solid $body-bg;
+  border-right: none;
+  border-left: none;
+
+  .menu-list {
+    margin: 0;
+  }
+}
+
+.container {
+  @include absolute(top 3.5rem left 0 right 0 bottom 0);
+
+  overflow: scroll;
+  border: $spacer / 2 solid $body-bg;
+  border-top: none;
 
   &.ng-enter {
     transform: translateY(-100%);
@@ -24,7 +57,6 @@ body {
   }
 
   &.ng-leave.ng-leave-active {
-    opacity: 0;
     transform: translateY(100%);
   }
 }
@@ -33,9 +65,8 @@ body {
   background-color: $body-bg2;
   margin-bottom: $spacer / 2;
   padding: $spacer;
-}
 
-.text-j {
-  text-align: justify;
-  hyphens: auto;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

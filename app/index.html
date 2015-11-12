@@ -1,15 +1,50 @@
 <!doctype html>
-<html ng-app="AwardApp">
+<html ng-app="AwardApp" ng-controller="GlobCtrl">
   <head>
-    <title ng-bind="title"></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title ng-bind="title"></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- build:css css/docs.css -->
     <link rel="stylesheet" href="./css/docs.css">
     <!-- endbuild -->
 
   </head>
-  <body>
+  <body ng-class="{'slide-show': showMenu}">
+    <header>
+      <h1>
+        <span class="hamburg" ng-class="{active: showMenu}" ng-click="showMenu=!showMenu"></span>
+        争章榜
+      </h1>
+    </header>
+    <nav>
+      <ul class="menu-list">
+        <li class="active">
+          <a href="#/home">
+            <span class="fa fa-home"></span>
+            首页
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <span class="fa fa-trophy"></span>
+            本轮冠军
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <span class="fa fa-database"></span>
+            个人数据
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <span class="fa fa-line-chart"></span>
+            成绩对比
+          </a>
+        </li>
+      </ul>
+    </nav>
     <main ng-view class="container"></main>
 
     <!-- build:js js/docs.js -->

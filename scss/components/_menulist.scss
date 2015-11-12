@@ -25,8 +25,6 @@
     padding: $spacer / 2 $spacer;
 
     span::before {
-      content: attr(data-icon);
-      font-size: 1.5em;
       padding-right: $spacer / 2;
     }
   }
