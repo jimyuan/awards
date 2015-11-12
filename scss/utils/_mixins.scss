@@ -76,10 +76,28 @@
   }
 }
 
+@mixin btn-variant($bg, $bg-active: darken($bg, 10%), $color: $body-color) {
+  background-color: $bg;
+  color: $color;
+
+  &:hover,
+  &.active,
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $bg-active;
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $bg;
+  }
+}
+
 @mixin tab-focus() {
   // Default
   outline: thin dotted;
   // WebKit
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 5px auto transparent;
   outline-offset: -2px;
 }
