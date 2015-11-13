@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+@keyframes zoomOut {
+  from {
+    visibility: visible;
+    opacity: 0.1;
+    transform: scale(5);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.champion {
+  color: gold;
+  letter-spacing: 0.2em;
+  visibility: hidden;
+  animation: 0.5s zoomOut ease forwards 1s;
+
+  &:not(.fa)::after {
+    content: '(' attr(data-stamps) ')';
+  }
+
+  &.fa {
+    font-size: 5rem;
+    animation-delay: 1.2s;
+  }
+}
