@@ -1,0 +1,39 @@
+<div class="row text-c person-chart">
+  <h2 ng-bind="person.name" data-id="{{person.id}}"></h2>
+  <canvas id="line" class="chart chart-line" chart-data="chart.data"
+  chart-labels="chart.labels" chart-options="chart.options">
+  </canvas>
+</div>
+
+<div class="row">
+  <ul class="person-data">
+    <li>
+      <span>最高</span>
+      {{ count.max }}
+    </li>
+    <li>
+      <span>最低</span>
+      {{ count.min }}
+    </li>
+    <li>
+      <span>平均</span>
+      {{ count.avg() }}
+    </li>
+    <li>
+      <span>总共</span>
+      {{ count.sum() }}
+    </li>
+  </ul>
+</div>
+
+<div class="row text-c">
+  <button class="btn btn-info" ng-click="changePerson(-1)">
+    <span class="fa fa-arrow-left"></span>
+  </button>
+  <button class="btn btn-info" ng-click="changePerson(0)">
+    <span class="fa fa-list-ol"></span>
+  </button>
+  <button class="btn btn-info" ng-click="changePerson(1)">
+    <span class="fa fa-arrow-right"></span>
+  </button>
+</div>

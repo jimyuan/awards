@@ -16,6 +16,18 @@
         templateUrl: viewPath + '/home.html',
         controller:  'HomeCtrl'
       })
+      .when('/last', {
+        templateUrl: viewPath + '/last.html',
+        controller:  'LastCtrl'
+      })
+      .when('/person/:id', {
+        templateUrl: viewPath + '/person.html',
+        controller:  'PersonCtrl'
+      })
+      .when('/person', {
+        templateUrl: viewPath + '/person.html',
+        controller:  'PersonCtrl'
+      })
       .when('/ui', {
         templateUrl: viewPath + '/ui.html'
       })

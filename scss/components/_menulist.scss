@@ -13,11 +13,16 @@
       border-top: 1px solid $body-bg;
     }
 
-    &.active > a,
-    & > a:hover {
+    &.active > a {
       color: inherit;
       background-color: lighten($body-bg2, 10%);
+      text-shadow: 1px 1px rgba(0,0,0,0.5);
+
+      .fa-chevron-right {
+        visibility: visible;
+      }
     }
+
   }
 
   a {
@@ -26,6 +31,12 @@
 
     span::before {
       padding-right: $spacer / 2;
+    }
+
+    .fa-chevron-right {
+      float: right;
+      line-height: 1.7;
+      visibility: hidden;
     }
   }
 }

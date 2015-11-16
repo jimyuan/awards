@@ -20,28 +20,11 @@
     </header>
     <nav>
       <ul class="menu-list">
-        <li class="active">
-          <a href="#/home">
-            <span class="fa fa-home"></span>
-            首页
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">
-            <span class="fa fa-trophy"></span>
-            本轮冠军
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">
-            <span class="fa fa-database"></span>
-            个人数据
-          </a>
-        </li>
-        <li>
-          <a href="javascript:void(0)">
-            <span class="fa fa-line-chart"></span>
-            成绩对比
+        <li ng-repeat="(key, val) in slideMenu" ng-class="{active: title==key}" ng-click="menuJump(key)">
+          <a href="#/{{ val.route }}">
+            <span class="fa fa-{{ val.icon }}"></span>
+            {{ key }}
+            <span class="fa fa-chevron-right"></span>
           </a>
         </li>
       </ul>
@@ -59,6 +42,8 @@
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="partial/home.js"></script>
+    <script src="partial/last.js"></script>
+    <script src="partial/person.js"></script>
     <!-- endbuild -->
   </body>
 </html>

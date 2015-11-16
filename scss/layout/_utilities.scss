@@ -11,46 +11,7 @@
   text-align: center;
 }
 
-/* hambur button */
-.hamburg {
-  $cell: 1.5rem / 5;
-  @include absolute(top $spacer * 1.1 left $spacer / 2);
-  @include size(1.8rem, $cell);
-
-  background-color: $body-color;
-  border-radius: $cell * 2;
-  transition: background 0.5s;
-
-  &::before,
-  &::after {
-    @include absolute(top $cell * -2 left 0 right 0);
-
-    content: '';
-    height: $cell;
-    background-color: inherit;
-    border-radius: inherit;
-    transition: transform 0.5s;
-  }
-
-  &::after {
-    top: $cell * 2
-  }
-
-  &.active {
-    background-color: $body-bg2;
-
-    &::before {
-      background-color: $body-color;
-      transform: translateY($cell * 2) rotate(135deg) ;
-    }
-
-    &::after {
-      background-color: $body-color;
-      transform: translateY($cell * -2) rotate(-135deg) ;
-    }
-  }
-}
-
+/* slide menu move to right */
 .slide-show {
   transform: translateX(60%);
 }

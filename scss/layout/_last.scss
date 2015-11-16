@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+
+/* unstyled list */
+.board-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+
+  li {
+    font-size: 0;
+
+    &:first-child {
+      border-bottom: 1px solid $body-bg;
+    }
+  }
+
+  span {
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 2;
+    padding: 0 $spacer / 2;
+
+    &:first-child {
+      width: 20%;
+    }
+
+    &:nth-child(2) {
+      width: 50%;
+    }
+  }
+}

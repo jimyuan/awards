@@ -20,11 +20,17 @@
   animation: 0.5s zoomOut ease forwards 1s;
 
   &:not(.fa)::after {
-    content: '(' attr(data-stamps) ')';
+    content: '(' attr(data-stamp) ')';
   }
 
   &.fa {
     font-size: 5rem;
     animation-delay: 1.2s;
   }
+}
+
+.chart-container {
+  visibility: hidden;
+  padding: 0.5rem 0;
+  animation: 0.5s zoomOut ease forwards 1.5s;
 }

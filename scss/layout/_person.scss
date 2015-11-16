@@ -1,0 +1,50 @@
+@charset 'utf-8';
+
+.person-chart {
+  h2::after {
+    content: ' (' attr(data-id) ')';
+  }
+
+  .chart-container {
+    animation-delay: 0.3s;
+  }
+}
+
+.person-data {
+  padding: 0;
+  list-style-type: none;
+  font-size: 0;
+  margin: $spacer * -1;
+
+  li {
+    display: inline-block;
+    width: 25%;
+    font-size: 2rem;
+    border-top-width: 3px;
+    border-top-style: solid;
+    text-align: center;
+
+    &:nth-child(1) {
+      border-top-color: #e64c65;
+    }
+
+    &:nth-child(2) {
+      border-top-color: #11a8ab;
+    }
+
+    &:nth-child(3) {
+      border-top-color: #fcb150;
+    }
+
+    &:nth-child(4) {
+      border-top-color: #4fc4f6;
+    }
+
+    span {
+      display: block;
+      font-size: 0.75rem;
+      color: #9099B7;
+      line-height: 2;
+    }
+  }
+}

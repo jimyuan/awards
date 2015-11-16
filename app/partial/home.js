@@ -1,27 +1,35 @@
 (function(){
   'use strict';
   angular.module('HomeCtrlModule', []).controller('HomeCtrl', ['Common', '$scope', '$http', function(Common, $scope, $http){
-    var ls = window.localStorage;
-    // page title
-    $scope.$parent.title = 'Home Page';
-
     /*
       打开页面后，发起ajax请求
-      1. 将数据格式化备用
-      2. 获取本轮章最多的同学
-      3. 将数据存入本地供再次调用
+      1. 将数据JSON化后存入本地
+      2. 获取本地获奖数据
+      3. 获取本轮章最多的同学
+      4. 显示夺冠票数
     */
     var request = function(){
+      var last = Common.last,
+          ls = Common.localStorage(),
+          awards;
+
       $http.get('data/awards.csv').then(function(req){
         // 1
-        $scope.awards = Common.dataHandle(req.data)
+        ls.set('awards', Common.dataHandle(req.data));
         // 2
-        $scope.champion = $scope.awards.details.sort(function(a, b){
-          var last = Common.last;
+        awards = ls.get('awards');
+        // 3
+        $scope.champion = awards.details.sort(function(a, b){
           return last(b.stamps) - last(a.stamps);
         })[0];
-        // 3
-        ls.setItem('awards', awards);
+        // 4
+        $scope.stamp = last($scope.champion.stamps);
+        // 5
+        $scope.chart = {
+          labels: awards.catalog,
+          data: [$scope.champion.stamps],
+          options: $scope.$parent.chartOptions
+        }
       });
     }();
   }]);
