@@ -46,7 +46,7 @@ nav {
 
   &.ng-enter {
     transform: translateY(-100%);
-    transition:0.5s cubic-bezier(.15,.5,1,1) transform;
+    transition: 0.5s cubic-bezier(.15,.5,1,1) transform;
   }
 
   &.ng-enter.ng-enter-active {
@@ -55,11 +55,15 @@ nav {
 
   &.ng-leave {
     transform: translateY(0);
-    transition:0.5s cubic-bezier(.15,.5,1,1) transform;
+    transition: 0.5s cubic-bezier(.15,.5,1,1) transform;
   }
 
   &.ng-leave.ng-leave-active {
     transform: translateY(100%);
+  }
+
+  &.no-transit {
+    transition-duration: 0s !important;
   }
 }
 

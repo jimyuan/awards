@@ -9,6 +9,16 @@
     'AwardControllers',
     'AwardServices'
   ])
+  .run(['$rootScope', '$location', function($rootScope, $location){
+    $rootScope.$on('$routeChangeStart', function(e){
+      var path = $location.path();
+      // 记录当前路径，用来高亮当前菜单
+      $rootScope.curMenu = path;
+      // 个人详情页面中无需页面过渡效果
+      path.indexOf('/person/') > -1 ? $rootScope.noTransit = true
+                                    : $rootScope.noTransit = false;
+    });
+  }])
   .config(['$routeProvider', function($routeProvider){
 
     $routeProvider
@@ -28,8 +38,8 @@
         templateUrl: viewPath + '/person.html',
         controller:  'PersonCtrl'
       })
-      .when('/ui', {
-        templateUrl: viewPath + '/ui.html'
+      .when('/compare', {
+        templateUrl: viewPath + '/compare.html'
       })
       .otherwise({redirectTo: '/home'});
 

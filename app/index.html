@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title ng-bind="title"></title>
+    <title>争章榜</title>
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- build:css css/docs.css -->
     <link rel="stylesheet" href="./css/docs.css">
@@ -20,8 +20,8 @@
     </header>
     <nav>
       <ul class="menu-list">
-        <li ng-repeat="(key, val) in slideMenu" ng-class="{active: title==key}" ng-click="menuJump(key)">
-          <a href="#/{{ val.route }}">
+        <li ng-repeat="(key, val) in slideMenu" ng-class="{active: curMenu.indexOf(val.route)>-1}" ng-click="menuJump(val.route)">
+          <a href="#{{ val.route }}">
             <span class="fa fa-{{ val.icon }}"></span>
             {{ key }}
             <span class="fa fa-chevron-right"></span>
@@ -29,7 +29,7 @@
         </li>
       </ul>
     </nav>
-    <main ng-view class="container"></main>
+    <main ng-view class="container" ng-class="{'no-transit': noTransit}"></main>
 
     <!-- build:js js/docs.js -->
     <script src="../bower_components/Chart.js/Chart.js"></script>

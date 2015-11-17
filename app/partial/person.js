@@ -15,7 +15,11 @@
     $scope.chart = {
       labels: awards.catalog,
       data: [stamps],
-      options: $scope.$parent.chartOptions
+      options: angular.extend(
+        {},
+        $scope.$parent.ctGlobOpts,
+        $scope.$parent.ctLineOpts
+      )
     };
 
     $scope.count = {
@@ -35,12 +39,19 @@
 
     $scope.changePerson = function() {
       var _id = parseInt(id, 10) + arguments[0];
-      console.log(stamps.length);
       if(arguments[0] !== 0 && _id > 0 && _id <= awards.details.length) {
         $location.path('/person/' + _id);
       } else if (arguments[0] === 0) {
         $location.path('/last');
       }
+    };
+
+    $scope.stampList = function(){
+      var stampList = [];
+      for(var i = 0, x = labels.length; i < x; i ++){
+        stampList.push(labels[i], stamps[i]);
+      }
+      return stampList;
     }
 
   }]);

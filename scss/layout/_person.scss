@@ -6,7 +6,8 @@
   }
 
   .chart-container {
-    animation-delay: 0.3s;
+    visibility: visible;
+    animation: none;
   }
 }
 
@@ -23,6 +24,10 @@
     border-top-width: 3px;
     border-top-style: solid;
     text-align: center;
+
+    &:nth-child(even) {
+      background-color: lighten($body-bg2, 5%);
+    }
 
     &:nth-child(1) {
       border-top-color: #e64c65;
@@ -45,6 +50,37 @@
       font-size: 0.75rem;
       color: #9099B7;
       line-height: 2;
+    }
+  }
+}
+
+.stamp-list {
+  padding: 0;
+  font-size: 0;
+  list-style-type: none;
+  margin: auto $spacer * -1;
+  border-top: 1px solid $body-bg;
+
+  li {
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    width: 25%;
+    border-bottom: 1px solid $body-bg;
+
+
+    &:nth-child(odd) {
+      text-align: right;
+      background-color: transparent;
+      padding-right: 0.5rem;
+      color: $brand-warning;
+    }
+
+    &:nth-child(even) {
+      text-align: left;
+      background-color: lighten($body-bg2, 5%);
+      padding-left: 1rem;
+      color: $brand-success;
     }
   }
 }

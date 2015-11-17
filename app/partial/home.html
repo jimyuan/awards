@@ -1,12 +1,18 @@
 <div class="row text-c">
-  <h2>本轮冠军</h2>
+  <h2>本轮冠军 (<span ng-bind="catalog"></span>)</h2>
   <h1 class="champion" ng-bind="champion.name" data-stamp="{{ stamp }}"></h1>
   <i class="fa fa-trophy champion"></i>
 </div>
 
 <div class="row text-c">
-  <h2>争章记录</h2>
+  <h2>争章趋势</h2>
   <canvas id="line" class="chart chart-line" chart-data="chart.data"
   chart-labels="chart.labels" chart-options="chart.options">
   </canvas>
+</div>
+
+<div class="row text-c">
+  <a href="#/last" class="btn btn-info">
+    <span class="fa fa-list-ol"></span> 查看全部
+  </a>
 </div>

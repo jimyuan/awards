@@ -17,7 +17,6 @@
       */
       dataHandle: function(data){
         var _data = data.split(/\r\n/);
-        _data.pop();
 
         return {
           catalog: _data[0].split(',').splice(2),

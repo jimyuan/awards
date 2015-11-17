@@ -7,6 +7,8 @@
       2. 获取本地获奖数据
       3. 获取本轮章最多的同学
       4. 显示夺冠票数
+      5. 显示夺冠轮次
+      6. 显示图表
     */
     var request = function(){
       var last = Common.last,
@@ -25,10 +27,15 @@
         // 4
         $scope.stamp = last($scope.champion.stamps);
         // 5
+        $scope.catalog = last(awards.catalog);
+        // 6
         $scope.chart = {
           labels: awards.catalog,
           data: [$scope.champion.stamps],
-          options: $scope.$parent.chartOptions
+          options: angular.extend(
+            $scope.$parent.ctGlobOpts,
+            $scope.$parent.ctLineOpts
+          )
         }
       });
     }();
