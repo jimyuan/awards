@@ -20,7 +20,7 @@
   }
 
   &::after {
-    top: $cell * 2
+    top: $cell * 2;
   }
 
   &.active {
@@ -28,12 +28,12 @@
 
     &::before {
       background-color: $body-color;
-      transform: translateY($cell * 2) rotate(135deg) ;
+      transform: translateY($cell * 2) rotate(135deg);
     }
 
     &::after {
       background-color: $body-color;
-      transform: translateY($cell * -2) rotate(-135deg) ;
+      transform: translateY($cell * -2) rotate(-135deg);
     }
   }
 }

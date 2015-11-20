@@ -11,7 +11,7 @@
   </button>
   <button class="btn btn-info" ng-click="changePerson(0)">
     <span class="fa fa-list-ol"></span>
-    查看全部
+    全班概况
   </button>
   <button class="btn btn-info" ng-click="changePerson(1)">
     <span class="fa fa-arrow-right"></span>
@@ -44,4 +44,8 @@
   <ul class="stamp-list">
     <li ng-repeat="stamp in stampList() track by $index" ng-bind="stamp"></li>
   </ul>
+</div>
+
+<div class="row">
+  <a href="{{ gopk }}" class="btn btn-success btn-block">和 {{ person.name }} PK</a>
 </div>

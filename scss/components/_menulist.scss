@@ -5,11 +5,11 @@
   margin: 0 $spacer * -1;
   list-style-type: none;
 
-  & > li {
+  > li {
     display: list-item;
     text-align: -webkit-match-parent;
 
-    & + li {
+    + li {
       border-top: 1px solid $body-bg;
     }
 

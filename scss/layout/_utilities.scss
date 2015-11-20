@@ -15,3 +15,13 @@
 .slide-show {
   transform: translateX(60%);
 }
+
+.title {
+  text-align: center;
+  background-color: $brand-info;
+
+  .row > & {
+    margin: $spacer * -1;
+    margin-bottom: $spacer;
+  }
+}

@@ -1,0 +1,22 @@
+.radio {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+
+  + label {
+    display: block;
+    padding: $spacer;
+    margin-bottom: 0;
+
+    > span::before {
+      content: '\f111';
+      color: $brand-success;
+      padding-right: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &:checked + label > span::before,
+  &:focus + label > span::before, {
+    content: '\f058';
+  }
+}

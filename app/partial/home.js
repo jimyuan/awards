@@ -17,7 +17,7 @@
 
       $http.get('data/awards.csv').then(function(req){
         // 1
-        ls.set('awards', Common.dataHandle(req.data));
+        ls.set('awards', Common.dataHandle(req.data, $scope.$parent.dataSource));
         // 2
         awards = ls.get('awards');
         // 3
@@ -36,7 +36,7 @@
             $scope.$parent.ctGlobOpts,
             $scope.$parent.ctLineOpts
           )
-        }
+        };
       });
     }();
   }]);

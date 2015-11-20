@@ -18,7 +18,7 @@
 
     $scope.personPage = function(id){
       var path = '/person/' + id;
-      $scope.$parent.title = "个人详情";
+      $scope.$parent.title = '个人详情';
       $location.path(path);
     };
 

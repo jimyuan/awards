@@ -1,0 +1,41 @@
+.multi-chart .chart-container {
+  animation-delay: 0s;
+}
+
+.add-list {
+  @include fixed(top 0 right 0 bottom 0 left 0);
+
+  padding: $spacer;
+  padding-top: $spacer * 3;
+  background-color: rgba($gray-lighter, 1);
+  overflow: scroll;
+  z-index: 2000;
+
+  .close {
+    @include absolute(top $spacer/2 right $spacer/2);
+
+    font-size: 2rem;
+    color: $gray-light;
+  }
+}
+
+.list-mates {
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: $gray;
+
+  li {
+    display: inline-block;
+    font-size: 1rem;
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+    &:nth-child(even) {
+      margin-right: 0;
+      margin-left: 5%;
+    }
+  }
+}

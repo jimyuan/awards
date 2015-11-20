@@ -52,7 +52,9 @@
         stampList.push(labels[i], stamps[i]);
       }
       return stampList;
-    }
+    };
+
+    $scope.gopk = '#/compare/' + id;
 
   }]);
 })();

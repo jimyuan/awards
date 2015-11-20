@@ -15,18 +15,31 @@
           }]
         }
       */
-      dataHandle: function(data){
-        var _data = data.split(/\r\n/);
+      dataHandle: function(data, source){
+        var _data = data.split(/\r\n/).slice(0,38), chooseStart, chooseEnd;
+        switch (source) {
+          case 'term1-2':
+            chooseStart = 2;
+            chooseEnd = 10;
+            break;
+          case 'term2-1':
+            chooseStart = 10;
+            chooseEnd = 1e5;
+            break;
+          default:
+            break;
+        }
 
         return {
-          catalog: _data[0].split(',').splice(2),
+          catalog: _data[0].split(',').slice(chooseStart, chooseEnd),
           details: _data.slice(1).map(function(item){
             var _arr = item.split(',');
+
             return {
               id: _arr[0],
               name: _arr[1],
-              gender: _arr[0] > 16 ? 'female' : 'male',
-              stamps: _arr.slice(2).map(function(item){
+              gender: _arr[0] > 21 ? 'female' : 'male',
+              stamps: _arr.slice(chooseStart, chooseEnd).map(function(item){
                 return parseInt(item, 10);
               })
             };
@@ -64,7 +77,7 @@
             ls.removeItem(key);
             return _val;
           }
-        }
+        };
       },
 
       /*

@@ -3,21 +3,26 @@
   angular.module('AwardControllers', [
     'HomeCtrlModule',
     'LastCtrlModule',
-    'PersonCtrlModule'
+    'PersonCtrlModule',
+    'SettingCtrlModule',
+    'CompareCtrlModule'
   ])
   .controller('GlobCtrl', ['$rootScope', '$location', '$scope', function($rootScope, $location, $scope){
     var ls = window.localStorage, path;
 
-    // page transition switch
-    // $rootScope.noTransit = false;
+    // 默认数据范围
+    $scope.dataSource = 'term2-1';
+
+
     // slide menu switch
     $scope.showMenu = false;
 
     $scope.slideMenu = {
       '本轮冠军' : {route: '/home', icon: 'home'},
-      '本轮概况' : {route: '/last', icon: 'database'},
+      '全班概况' : {route: '/last', icon: 'database'},
       '个人详情' : {route: '/person', icon: 'user'},
-      '成绩对比' : {route: '/compare', icon: 'line-chart'}
+      '成绩对比' : {route: '/compare', icon: 'line-chart'},
+      '相关设置' : {route: '/setting', icon: 'cog'}
     };
 
     // global chart.js options
@@ -26,13 +31,13 @@
       scaleFontColor: 'white',
       scaleBeginAtZero: true,
       tooltipTemplate: '<%if (label){%><%=label%>: <%}%><%= value %>票',
-    }
+    };
     // line chart options
     $scope.ctLineOpts = {
       pointDotRadius : 2,
       pointDotStrokeWidth : 0,
       pointHitDetectionRadius : 5
-    }
+    };
 
     // click action when slide menu
     $scope.menuJump = function(path){

@@ -39,7 +39,16 @@
         controller:  'PersonCtrl'
       })
       .when('/compare', {
-        templateUrl: viewPath + '/compare.html'
+        templateUrl: viewPath + '/compare.html',
+        controller:  'CompareCtrl'
+      })
+      .when('/compare/:id', {
+        templateUrl: viewPath + '/compare.html',
+        controller:  'CompareCtrl'
+      })
+      .when('/setting', {
+        templateUrl: viewPath + '/setting.html',
+        controller:  'SettingCtrl'
       })
       .otherwise({redirectTo: '/home'});
 
