@@ -36,7 +36,8 @@
     $scope.ctLineOpts = {
       pointDotRadius : 2,
       pointDotStrokeWidth : 0,
-      pointHitDetectionRadius : 5
+      pointHitDetectionRadius : 5,
+      datasetFill : true
     };
 
     // click action when slide menu

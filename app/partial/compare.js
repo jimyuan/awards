@@ -4,7 +4,7 @@
 
     var ls = Common.localStorage(), awards = ls.get('awards');
 
-
+    /* 分装lineChart数据格式 */
     var lineChart = function(date){
       var chartOption = {
         labels: awards.catalog,
@@ -39,7 +39,6 @@
       });
       $scope.chart = lineChart($scope.compareList);
     }
-    console.log($scope.compareList);
 
     /*
       对比候选名单，存入$sope.mates
@@ -62,14 +61,6 @@
         var _compare = this.mates.splice(index, 1);
         this.compareList.push(_compare[0]);
         $scope.chart = lineChart(this.compareList);
-        // $scope.chart = angular.extend(chart, {
-        //   series: this.compareList.map(function(item){
-        //     return item.name;
-        //   }),
-        //   data: this.compareList.map(function(item){
-        //     return item.stamps;
-        //   })
-        // });
       }
     };
 
@@ -79,15 +70,6 @@
     $scope.removeCompare = function(index){
       var _compare = this.compareList.splice(index, 1);
       this.mates.push(_compare[0]);
-
-      // $scope.chart = angular.extend(chart, {
-      //   series: this.compareList.map(function(item){
-      //     return item.name;
-      //   }),
-      //   data: this.compareList.map(function(item){
-      //     return item.stamps;
-      //   })
-      // });
       $scope.chart = lineChart(this.compareList);
     };
 
