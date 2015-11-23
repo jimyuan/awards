@@ -7,7 +7,7 @@
     }),
     _ = {
       app:  'app',
-      dist: 'dist',
+      dist: 'pub',
       scss: 'scss',
       img:  'app/img',
       view: 'app/partial',
@@ -141,6 +141,15 @@
   });
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //| ✓ minify all partial files
+  //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+  gulp.task('viewmin', function() {
+    return gulp.src(_.view + '/**/*.html')
+      .pipe($.htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest(_.dist + '/partial'))
+  });
+
+  //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //| ✓ make a zip file after build the files
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('zip', function() {
@@ -180,10 +189,8 @@
   //| ✓ alias
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('test',  ['scsslint', 'jshint']);
-  gulp.task('build', ['test', 'clean', 'image', 'html'], function(){
-    return gulp.src(_.view + '/**/*.html')
-      .pipe(gulp.dest(_.dist + '/partial'))
-      .gulp.src(_.app + 'data/*')
+  gulp.task('build', ['clean', 'image', 'html', 'viewmin'], function(){
+    return gulp.src(_.app + '/data/*')
       .pipe(gulp.dest(_.dist + '/data'));
   });
 

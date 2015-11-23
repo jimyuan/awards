@@ -4,6 +4,7 @@ node_modules
 bower_components
 zipfiles
 dist
+pub
 *.bak
 
 app/css

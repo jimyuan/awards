@@ -17,7 +17,7 @@
 <div class="add-list" ng-show="showList">
   <i class="close fa fa-times-circle-o" ng-click="candidateSwitch()"></i>
   <ul class="list-mates">
-    <li ng-repeat="mate in mates | orderBy: mates.id">
+    <li ng-repeat="mate in mates">
       <button class="btn btn-block" ng-class="{'btn-info': mate.id<22, 'btn-danger': mate.id>21}" ng-bind="mate.name" ng-click="addCompare($index)"></button>
     </li>
   </ul>

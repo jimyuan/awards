@@ -6,7 +6,7 @@
 
   background-color: $body-color;
   border-radius: $cell * 2;
-  transition: background 0.5s;
+  transition: all 0.5s;
 
   &::before,
   &::after {
@@ -25,6 +25,7 @@
 
   &.active {
     background-color: darken($body-bg2, 8%);
+    transform: rotate(0.5turn);
 
     &::before {
       background-color: $body-color;

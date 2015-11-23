@@ -3,16 +3,16 @@
 }
 
 .add-list {
-  @include fixed(top 0 right 0 bottom 0 left 0);
+  @include fixed(top 3.5rem right 0 bottom 0 left 0);
 
   padding: $spacer;
   padding-top: $spacer * 3;
-  background-color: rgba($gray-lighter, 1);
+  background-color: rgba($gray-lighter, 0.9);
   overflow: scroll;
   z-index: 2000;
 
   .close {
-    @include absolute(top $spacer/2 right $spacer/2);
+    @include absolute(top $spacer/2 right $spacer);
 
     font-size: 2rem;
     color: $gray-light;
