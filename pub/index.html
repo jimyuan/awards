@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="AwardApp" ng-controller="GlobCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>争章榜</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/docs.css">
+
+  </head>
+  <body ng-class="{'slide-show': showMenu}">
+    <header>
+      <h1>
+        <span class="hamburg" ng-class="{active: showMenu}" ng-click="showMenu=!showMenu"></span>
+        争章榜
+      </h1>
+    </header>
+    <nav>
+      <ul class="menu-list">
+        <li ng-repeat="(key, val) in slideMenu" ng-class="{active: curMenu.indexOf(val.route)>-1}" ng-click="menuJump(val.route)">
+          <a href="#{{ val.route }}">
+            <span class="fa fa-{{ val.icon }}"></span>
+            {{ key }}
+            <span class="fa fa-chevron-right"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main ng-view class="container" ng-class="{'no-transit': noTransit}"></main>
+
+    <script src="js/docs.js"></script>
+  </body>
+</html>
