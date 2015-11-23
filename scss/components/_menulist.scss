@@ -13,16 +13,16 @@
       border-top: 1px solid $body-bg;
     }
 
-    &.active > a {
-      color: inherit;
-      background-color: lighten($body-bg2, 10%);
-      text-shadow: 1px 1px rgba(0,0,0,0.5);
+  }
 
-      .fa-chevron-right {
-        visibility: visible;
-      }
+  > .active > a {
+    color: inherit;
+    background-color: lighten($body-bg2, 10%);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+
+    .fa-chevron-right {
+      visibility: visible;
     }
-
   }
 
   a {

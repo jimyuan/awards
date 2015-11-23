@@ -182,7 +182,9 @@
   gulp.task('test',  ['scsslint', 'jshint']);
   gulp.task('build', ['test', 'clean', 'image', 'html'], function(){
     return gulp.src(_.view + '/**/*.html')
-      .pipe(gulp.dest(_.dist + '/partial'));
+      .pipe(gulp.dest(_.dist + '/partial'))
+      .gulp.src(_.app + 'data/*')
+      .pipe(gulp.dest(_.dist + '/data'));
   });
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

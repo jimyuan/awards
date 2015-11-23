@@ -29,8 +29,8 @@ nav {
   width: 60%;
   background-color: lighten($body-bg, 5%);
   border: $spacer / 2 solid $body-bg;
-  border-right: none;
-  border-left: none;
+  border-right: 0;
+  border-left: 0;
 
   .menu-list {
     margin: 0;
@@ -42,11 +42,11 @@ nav {
 
   overflow: scroll;
   border: $spacer / 2 solid $body-bg;
-  border-top: none;
+  border-top: 0;
 
   &.ng-enter {
     transform: translateY(-100%);
-    transition: 0.5s cubic-bezier(.15,.5,1,1) transform;
+    transition: 0.5s cubic-bezier(0.15, 0.5, 1, 1) transform;
   }
 
   &.ng-enter.ng-enter-active {
@@ -55,7 +55,7 @@ nav {
 
   &.ng-leave {
     transform: translateY(0);
-    transition: 0.5s cubic-bezier(.15,.5,1,1) transform;
+    transition: 0.5s cubic-bezier(0.15, 0.5, 1, 1) transform;
   }
 
   &.ng-leave.ng-leave-active {
