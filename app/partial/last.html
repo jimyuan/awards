@@ -7,9 +7,9 @@
       <span>数量</span>
     </li>
     <li ng-repeat="record in lastStamp | orderBy: '-stamp'" ng-click="personPage(record.id)">
-      <span ng-bind="record.id"></span>
-      <span ng-bind="record.name"></span>
-      <span ng-bind="record.stamp"></span>
+      <span ng-bind="::record.id"></span>
+      <span ng-bind="::record.name"></span>
+      <span ng-bind="::record.stamp"></span>
     </li>
   </ul>
 </div>
